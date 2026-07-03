@@ -1,0 +1,10 @@
+SELECT *
+FROM Matches 
+LEFT JOIN MatchEvents ON MatchEvents.match_id = Matches.match_id
+
+UNION ALL
+
+SELECT *
+FROM Matches
+RIGHT JOIN MatchEvents ON MatchEvents.match_id = Matches.match_id
+WHERE Matches.match_id IS NULL;
